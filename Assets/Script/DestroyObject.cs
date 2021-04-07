@@ -18,7 +18,7 @@ public class DestroyObject : MonoBehaviour
             if (objectHP > 0)
             {
                 Destroy(other.gameObject);
-                GameObject effect = Instantiate(effectPrefab2, transform.position, Quaternion.identity);
+                GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
                 Destroy(effect, 2.0f);
             }
             else
