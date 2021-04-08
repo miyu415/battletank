@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ShotShell : MonoBehaviour
 {
-    public float shotSpeed;
+    public float shotSpeed;//他のスクリプト等々見れたり、値を変えれる
 
-    //privateの状態でもinspector上から設定できるようにするテクニック。
+    //privateの状態でもinspector上から設定できるようにするテクニック
     [SerializeField]
     private GameObject shellPrefab;
 
@@ -16,7 +16,7 @@ public class ShotShell : MonoBehaviour
     void Update()
     {
         //もしもマウスの左ボタンを押したら
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetMouseButtonDown(0))
         {
            //砲弾のプレハブを実体化する
             GameObject shell = Instantiate(shellPrefab, transform.position, Quaternion.identity);
