@@ -9,7 +9,7 @@ public class Radar : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("Payer"))
+        if(other.CompareTag("Player"))
         {
             transform.root.LookAt(target);
         }

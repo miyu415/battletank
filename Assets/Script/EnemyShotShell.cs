@@ -17,11 +17,11 @@ public class EnemyShotShell : MonoBehaviour
 
         if(interval%60==0)//余りが０の時
         {
-            GameObject enemyShell = Instantiate(enemyShellPrefab, transform.position,Quaternion.identity);
-            Rigidbody enemyShellRb = enemyShell.GetComponent<Rigidbody>();
-            enemyShellRb = enemyShell.GetComponent<Rigidbody>();
-            enemyShellRb.AddForce(transform.forward * shotSpeed);
-            AudioSource.PlayClipAtPoint(shotSound, transform.position);
+            GameObject enemyShell = Instantiate(enemyShellPrefab, transform.position,Quaternion.identity);//enemyShellにInstantiateメソッドを代入してる、指定は不要
+            Rigidbody enemyShellRb = enemyShell.GetComponent<Rigidbody>();//rbをコンポーネントしている
+            enemyShellRb = enemyShell.GetComponent<Rigidbody>();//.GetComponentを実行する対象となるGameObject型の指定が必要、＝の右側にあるメソッドは戻り値がある
+            enemyShellRb.AddForce(transform.forward * shotSpeed);//戻り値なし
+            AudioSource.PlayClipAtPoint(shotSound, transform.position);//戻り値なし
             Destroy(enemyShell, 3.0f);
         }
     }
