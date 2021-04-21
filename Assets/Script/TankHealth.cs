@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;//シーンを変える命令を出すための宣言
 
 public class TankHealth : MonoBehaviour
 {
@@ -27,8 +28,14 @@ public class TankHealth : MonoBehaviour
             {
                 GameObject effect2 = Instantiate(effectPrefab1, transform.position, Quaternion.identity);
                 Destroy(effect2, 1.0f);
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                this.gameObject.SetActive(false);//非表示にする
+                Invoke("GoToGameOver", 1.5f);//1.5秒後にGoToGameOver実行する
             }
         }
+    }
+    void GoToGameOver()
+    {
+        SceneManager.LoadScene("GameOver");//シーンを変えるためのメソッド、GameOverのシーンに移動する
     }
 }
