@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;//シーンを変える命令を出すための宣言
+using UnityEngine.UI;
 
 public class TankHealth : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class TankHealth : MonoBehaviour
     [SerializeField]
     private GameObject effectPrefab2;
     public int tankHP;
+    [SerializeField]
+    private Text HPLabel;
     private void OnTriggerEnter(Collider other)
     {
         //もしぶつっかてきた相手のTagが”EnemyShell”であったならば
@@ -17,6 +20,7 @@ public class TankHealth : MonoBehaviour
         {
             //HPを１ずつ減少させる
             tankHP -= 1;
+            HPLabel.text = "HP" + tankHP;
             //ぶつっかてきた相手側を破壊する
             Destroy(other.gameObject);
             if(tankHP>0)
@@ -28,7 +32,7 @@ public class TankHealth : MonoBehaviour
             {
                 GameObject effect2 = Instantiate(effectPrefab1, transform.position, Quaternion.identity);
                 Destroy(effect2, 1.0f);
-                //Destroy(gameObject);
+                Destroy(gameObject);
                 this.gameObject.SetActive(false);//非表示にする
                 Invoke("GoToGameOver", 1.5f);//1.5秒後にGoToGameOver実行する
             }

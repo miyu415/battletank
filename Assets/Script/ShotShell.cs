@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShotShell : MonoBehaviour
 {
@@ -8,16 +9,30 @@ public class ShotShell : MonoBehaviour
 
     //privateの状態でもinspector上から設定できるようにするテクニック
     [SerializeField]
-    private GameObject shellPrefab;
+    private GameObject shellPrefab = null;
 
     [SerializeField]
-    private AudioClip shotSound;
-    
+    private AudioClip shotSound = null;
+
+    private float timeBetweenShot = 0.75f;
+    private float timer;
+    public int shotCount;
+    [SerializeField]
+    private Text shellLabel;
+
+    private void Start()
+    {
+        shellLabel.text = "残弾" + shotCount;
+    }
     void Update()
     {
+        timer += Time.deltaTime;//1フレームあたりの差分値
         //もしもマウスの左ボタンを押したら
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && timer>timeBetweenShot && shotCount>0)//&&＝かつ　マウスを押したとき前回弾丸を発射してから０．７５秒経っていて残段数がある場合
         {
+            shotCount -= 1;
+            shellLabel.text = "砲弾"+shotCount;
+            timer = 0.0f;
            //砲弾のプレハブを実体化する
             GameObject shell = Instantiate(shellPrefab, transform.position, Quaternion.identity);
             //砲弾に付いてるRigidbodyにアクセスする
