@@ -19,21 +19,24 @@ public class ShotShell : MonoBehaviour
     public int shotCount;
     [SerializeField]
     private Text shellLabel;
+    //残弾数の最大値を設定する
+    public int shotMaxCount = 20;
 
     private void Start()
     {
+        shotCount = shotMaxCount;
         shellLabel.text = "残弾" + shotCount;
     }
     void Update()
     {
         timer += Time.deltaTime;//1フレームあたりの差分値
         //もしもマウスの左ボタンを押したら
-        if(Input.GetMouseButtonDown(0) && timer>timeBetweenShot && shotCount>0)//&&＝かつ　マウスを押したとき前回弾丸を発射してから０．７５秒経っていて残段数がある場合
+        if (Input.GetMouseButtonDown(0) && timer > timeBetweenShot && shotCount > 0)//&&＝かつ　マウスを押したとき前回弾丸を発射してから０．７５秒経っていて残段数がある場合
         {
             shotCount -= 1;
-            shellLabel.text = "砲弾"+shotCount;
+            shellLabel.text = "砲弾" + shotCount;
             timer = 0.0f;
-           //砲弾のプレハブを実体化する
+            //砲弾のプレハブを実体化する
             GameObject shell = Instantiate(shellPrefab, transform.position, Quaternion.identity);
             //砲弾に付いてるRigidbodyにアクセスする
             Rigidbody shellRb = shell.GetComponent<Rigidbody>();
@@ -44,5 +47,14 @@ public class ShotShell : MonoBehaviour
             //砲弾の発射音をだす
             AudioSource.PlayClipAtPoint(shotSound, transform.position);
         }
+    }
+    public void AddShell(int amount)
+    {
+        shotCount += amount;
+        if (shotCount>shotMaxCount)
+        {
+            shotCount = shotMaxCount;
+        }
+        shellLabel.text = "残弾" + shotCount;
     }
 }

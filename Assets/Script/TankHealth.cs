@@ -13,6 +13,13 @@ public class TankHealth : MonoBehaviour
     public int tankHP;
     [SerializeField]
     private Text HPLabel;
+    private int tankMaxHP = 10;
+
+    private void Start()
+    {
+        tankHP = tankMaxHP;
+        HPLabel.text = "HP:" + tankHP;
+    }
     private void OnTriggerEnter(Collider other)
     {
         //もしぶつっかてきた相手のTagが”EnemyShell”であったならば
@@ -42,4 +49,17 @@ public class TankHealth : MonoBehaviour
     {
         SceneManager.LoadScene("GameOver");//シーンを変えるためのメソッド、GameOverのシーンに移動する
     }
+
+    public void AddHP(int amount)
+    {
+        tankHP += amount;
+        if(tankHP>tankMaxHP)
+        {
+            tankHP = tankMaxHP;
+        }
+        HPLabel.text = "HP:" + tankHP;
+
+    }
+   
 }
+
