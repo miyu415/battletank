@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8087784343380167737}
   - component: {fileID: 8281491081372448301}
   - component: {fileID: 8280282405729628213}
+  - component: {fileID: 1363601659}
+  - component: {fileID: 1363601655}
   m_Layer: 0
   m_Name: RisingSteam_hp_effect
   m_TagString: Untagged
@@ -4812,3 +4814,30 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &1363601659
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8081828365917639683}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.098586, y: 5.2959843, z: 4.314119}
+  m_Center: {x: 0.007567644, y: -1.8983996, z: 2.1718767}
+--- !u!114 &1363601655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8081828365917639683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbf95ca7192c6a498d983f70611ac76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefab: {fileID: 100002, guid: 75369bb81385f4904842bf20a51c14a2, type: 3}
+  getSound: {fileID: 8300000, guid: d0ffe51c1770e9f449898c4f12785bdb, type: 3}

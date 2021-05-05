@@ -1409,8 +1409,9 @@ MonoBehaviour:
     type: 3}
   effectPrefab2: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
     type: 3}
-  tankHP: 530000
+  tankHP: 20
   HPLabel: {fileID: 414214931}
+  tankMaxHP: 30
 --- !u!65 &986128983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1652,7 +1653,7 @@ PrefabInstance:
     - target: {fileID: 666762752056064074, guid: 99489abb5d615c84f976e618b2238db8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.9430393
+      value: 3.38
       objectReference: {fileID: 0}
     - target: {fileID: 666762752056064074, guid: 99489abb5d615c84f976e618b2238db8,
         type: 3}
@@ -1849,40 +1850,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1428641771 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 672487865331294320, guid: 99489abb5d615c84f976e618b2238db8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1266662389}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1428641772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428641771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78d66f68cbdc9ac41a3659c66bae5820, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getSound: {fileID: 8300000, guid: d0ffe51c1770e9f449898c4f12785bdb, type: 3}
-  effectPrefab: {fileID: 672487865331294320, guid: 99489abb5d615c84f976e618b2238db8,
-    type: 3}
---- !u!65 &1428641773
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428641771}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6.84, y: 6.8400016, z: 4.9400005}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1567837429
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,6 +2187,75 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1001 &1945220073
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8081828365917639683, guid: 1f150d9677e3f444c997d3326978e2a5,
+        type: 3}
+      propertyPath: m_Name
+      value: RisingSteam_hp_effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087784343380167737, guid: 1f150d9677e3f444c997d3326978e2a5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087784343380167737, guid: 1f150d9677e3f444c997d3326978e2a5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087784343380167737, guid: 1f150d9677e3f444c997d3326978e2a5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087784343380167737, guid: 1f150d9677e3f444c997d3326978e2a5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087784343380167737, guid: 1f150d9677e3f444c997d3326978e2a5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087784343380167737, guid: 1f150d9677e3f444c997d3326978e2a5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087784343380167737, guid: 1f150d9677e3f444c997d3326978e2a5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087784343380167737, guid: 1f150d9677e3f444c997d3326978e2a5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087784343380167737, guid: 1f150d9677e3f444c997d3326978e2a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087784343380167737, guid: 1f150d9677e3f444c997d3326978e2a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087784343380167737, guid: 1f150d9677e3f444c997d3326978e2a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f150d9677e3f444c997d3326978e2a5, type: 3}
 --- !u!1 &1984147437
 GameObject:
   m_ObjectHideFlags: 0

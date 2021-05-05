@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 666762752056064074}
   - component: {fileID: 833307150613889630}
   - component: {fileID: 834358664814462022}
+  - component: {fileID: 1428641773}
+  - component: {fileID: 1428641772}
   m_Layer: 0
   m_Name: RisingSteam_bullet_effect
   m_TagString: Untagged
@@ -35,8 +37,7 @@ Transform:
 --- !u!198 &833307150613889630
 ParticleSystem:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 198322761928737398, guid: efe021d4c307b5449b8121d46791cf95,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672487865331294320}
@@ -4813,3 +4814,30 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &1428641773
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672487865331294320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3074193, y: 2.9079955, z: 2.498281}
+  m_Center: {x: -0.35783267, y: -1.5126562, z: 1.22086}
+--- !u!114 &1428641772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672487865331294320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d66f68cbdc9ac41a3659c66bae5820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getSound: {fileID: 8300000, guid: d0ffe51c1770e9f449898c4f12785bdb, type: 3}
+  effectPrefab: {fileID: 100002, guid: 75369bb81385f4904842bf20a51c14a2, type: 3}

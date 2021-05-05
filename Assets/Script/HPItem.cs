@@ -11,17 +11,18 @@ public class HPItem : MonoBehaviour
     private TankHealth th;
     private int reward = 3;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)//他のゲームオブジェクトのコライダー同士がぶつかった時
     {
-        if(other.gameObject.tag=="player")
+        if (other.gameObject.tag == "Player")
         {
-            th = GameObject.Find("tank").GetComponent<TankHealth>();
+            th = other.gameObject.GetComponent<TankHealth>();
+
+            th.AddHP(reward);
+            Destroy(gameObject);
+            GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
+            AudioSource.PlayClipAtPoint(getSound, transform.position);
         }
-        th.AddHP(reward);
-        Destroy(gameObject);
-        GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
-        Destroy(effect, 0.5f);
-        AudioSource.PlayClipAtPoint(getSound, transform.position);
     }
 
 }

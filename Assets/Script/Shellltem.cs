@@ -14,13 +14,14 @@ public class Shellltem : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
+        {
             ss = GameObject.Find("ShotShell").GetComponent<ShotShell>();
-        ss.AddShell(reward);
-        Destroy(gameObject);
-        AudioSource.PlayClipAtPoint(getSound, transform.position);
-        GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
-        Destroy(effect, 0.5f);
-
+            ss.AddShell(reward);
+            Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(getSound, transform.position);
+            GameObject effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
+        }
     }
         
 }

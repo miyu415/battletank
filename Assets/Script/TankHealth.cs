@@ -13,7 +13,7 @@ public class TankHealth : MonoBehaviour
     public int tankHP;
     [SerializeField]
     private Text HPLabel;
-    private int tankMaxHP = 10;
+    public int tankMaxHP = 10;
 
     private void Start()
     {
